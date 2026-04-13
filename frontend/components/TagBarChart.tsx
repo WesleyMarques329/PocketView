@@ -129,7 +129,10 @@ export default function TagBarChart({
               <Tooltip
                 cursor={{ fill: 'transparent' }}
                 contentStyle={tooltipStyle}
-                formatter={(value: number) => [`R$ ${value.toFixed(2)}`, 'Total']}
+                formatter={(value) => {
+                  const val = Number(value || 0);
+                  return [`R$ ${val.toFixed(2)}`, 'Total'];
+                }}
                 labelFormatter={(label) => `#${label}`}
               />
               <Bar dataKey="value" radius={[12, 12, 0, 0]}>
