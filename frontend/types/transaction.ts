@@ -8,4 +8,6 @@ export interface Transaction {
   notes: string;
   favorite: boolean;
   tags: string[];
+  paymentMethod: 'cash' | 'credit';
+  cardName?: string;
 }
